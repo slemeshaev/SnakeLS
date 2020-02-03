@@ -56,8 +56,8 @@
 		669B07AA23E88E12001988DB /* SnakeLS */ = {
 			isa = PBXGroup;
 			children = (
-				669B07C323E89963001988DB /* GameScene.swift */,
 				669B07AB23E88E12001988DB /* AppDelegate.swift */,
+				669B07C323E89963001988DB /* GameScene.swift */,
 				669B07B323E88E12001988DB /* GameViewController.swift */,
 				669B07B523E88E12001988DB /* Main.storyboard */,
 				669B07B823E88E16001988DB /* Assets.xcassets */,
