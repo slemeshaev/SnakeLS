@@ -31,16 +31,33 @@ class GameScene: SKScene {
         counterClockwiseButton.path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 45, height:  45)).cgPath
         // указываю координаты размещения
         counterClockwiseButton.position = CGPoint(x: view.scene!.frame.minX + 30, y: view.scene!.frame.minX + 30)
-        // цвет заливки кнопки
+        // цвет заливки левой кнопки
         counterClockwiseButton.fillColor = UIColor.gray
-        // цвет рамки кнопки
+        // цвет рамки левой кнопки
         counterClockwiseButton.strokeColor = UIColor.gray
         // толщина рамки
         counterClockwiseButton.lineWidth = 10
         // имя объекта для взаимодействия
         counterClockwiseButton.name = "counterClockwiseButton"
-        // добавляю на сцену
+        // добавляю левую кнопку на сцену
         self.addChild(counterClockwiseButton)
+        
+        // Делаем кнопку поворота по часовой стрелке
+        let clockwiseButton = SKShapeNode()
+        // задаю форму круга
+        clockwiseButton.path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 45, height: 45)).cgPath
+        // указываю координаты размещения
+        clockwiseButton.position = CGPoint(x: view.scene!.frame.maxX - 80, y: view.scene!.frame.minY + 30)
+        // цвет заливки правой кнопки
+        clockwiseButton.fillColor = UIColor.gray
+        // цвет рамки правой кнопки
+        clockwiseButton.strokeColor = UIColor.gray
+        // толщина рамки
+        clockwiseButton.lineWidth = 10
+        // имя объекта для взаимодействия
+        clockwiseButton.name = "clockwiseButton"
+        // добавляю правую кнопку на сцену
+        self.addChild(clockwiseButton)
     }
     
     // вызывается при нажатии на экран
