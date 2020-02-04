@@ -62,12 +62,32 @@ class GameScene: SKScene {
     
     // вызывается при нажатии на экран
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //
+        // перебираем все точки, куда прикоснулся палец
+        for touch in touches {
+            // определяем координаты касания для точки
+            let touchLocation = touch.location(in: self)
+            // проверяем, есть ли объект по этим координатам
+            // и если есть, то не наша ли это кнопка
+            guard  let touchedNode = self.atPoint(touchLocation) as? SKShapeNode,
+                touchedNode.name == "counterClockwiseButton" || touchedNode.name == "clockwiseButton" else { return }
+            // если это наша кнопка, заливаем ее зеленым цветом
+            touchedNode.fillColor = .green
+        }
     }
     
     // вызывается при прекращении нажатия на экран
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //
+        // перебираем все точки, куда прикоснулся палец
+        for touch in touches {
+            // определяем координаты касания для точки
+            let touchLocation = touch.location(in: self)
+            // проверяем, есть ли объект по этим координатам
+            // и если есть, то не наша ли это кнопка
+            guard  let touchedNode = self.atPoint(touchLocation) as? SKShapeNode,
+                touchedNode.name == "counterClockwiseButton" || touchedNode.name == "clockwiseButton" else { return }
+            // если это наша кнопка, заливаем ее зеленым цветом
+            touchedNode.fillColor = .gray
+        }
     }
     
     // вызывается при обрыве нажатия на экран (при приеме звонка, например)
