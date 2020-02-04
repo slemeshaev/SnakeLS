@@ -13,6 +13,7 @@
 		669B07B923E88E16001988DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669B07B823E88E16001988DB /* Assets.xcassets */; };
 		669B07BC23E88E16001988DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669B07BA23E88E16001988DB /* LaunchScreen.storyboard */; };
 		669B07C423E89963001988DB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669B07C323E89963001988DB /* GameScene.swift */; };
+		669B07C623E9FDDC001988DB /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669B07C523E9FDDC001988DB /* Apple.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		669B07BB23E88E16001988DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		669B07BD23E88E16001988DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		669B07C323E89963001988DB /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		669B07C523E9FDDC001988DB /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				669B07AB23E88E12001988DB /* AppDelegate.swift */,
 				669B07C323E89963001988DB /* GameScene.swift */,
+				669B07C523E9FDDC001988DB /* Apple.swift */,
 				669B07B323E88E12001988DB /* GameViewController.swift */,
 				669B07B523E88E12001988DB /* Main.storyboard */,
 				669B07B823E88E16001988DB /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669B07C623E9FDDC001988DB /* Apple.swift in Sources */,
 				669B07C423E89963001988DB /* GameScene.swift in Sources */,
 				669B07B423E88E12001988DB /* GameViewController.swift in Sources */,
 				669B07AC23E88E12001988DB /* AppDelegate.swift in Sources */,
