@@ -13,7 +13,16 @@ class GameScene: SKScene {
     
     // вызывается при первом запуске сцены
     override func didMove(to view: SKView) {
-        //
+        // цвет фона сцены
+        backgroundColor = SKColor.black
+        // вектор и сила гравитации
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        // добавляем поддержку физики
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
+        // выключаем внешние воздействия на игру
+        self.physicsBody?.allowsRotation = false
+        // включаем отображение отладочной информации
+        view.showsPhysics = true
     }
     
     // вызывается при нажатии на экран
