@@ -23,6 +23,24 @@ class GameScene: SKScene {
         self.physicsBody?.allowsRotation = false
         // включаем отображение отладочной информации
         view.showsPhysics = true
+        
+        // Делаем кнопку поворота против часовой стрелки
+        // создаю нодe (объект)
+        let counterClockwiseButton = SKShapeNode()
+        // задаю форму круга
+        counterClockwiseButton.path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 45, height:  45)).cgPath
+        // указываю координаты размещения
+        counterClockwiseButton.position = CGPoint(x: view.scene!.frame.minX + 30, y: view.scene!.frame.minX + 30)
+        // цвет заливки кнопки
+        counterClockwiseButton.fillColor = UIColor.gray
+        // цвет рамки кнопки
+        counterClockwiseButton.strokeColor = UIColor.gray
+        // толщина рамки
+        counterClockwiseButton.lineWidth = 10
+        // имя объекта для взаимодействия
+        counterClockwiseButton.name = "counterClockwiseButton"
+        // добавляю на сцену
+        self.addChild(counterClockwiseButton)
     }
     
     // вызывается при нажатии на экран
