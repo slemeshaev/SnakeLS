@@ -16,6 +16,7 @@
 		669B07C623E9FDDC001988DB /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669B07C523E9FDDC001988DB /* Apple.swift */; };
 		66BD22B123EB329C00FD82AC /* SnakeBodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD22B023EB329C00FD82AC /* SnakeBodyPart.swift */; };
 		66BD22B323EB349C00FD82AC /* SnakeHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD22B223EB349C00FD82AC /* SnakeHead.swift */; };
+		66BD22B523EB369700FD82AC /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD22B423EB369700FD82AC /* Snake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		669B07C523E9FDDC001988DB /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
 		66BD22B023EB329C00FD82AC /* SnakeBodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeBodyPart.swift; sourceTree = "<group>"; };
 		66BD22B223EB349C00FD82AC /* SnakeHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeHead.swift; sourceTree = "<group>"; };
+		66BD22B423EB369700FD82AC /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				669B07C323E89963001988DB /* GameScene.swift */,
 				66BD22B023EB329C00FD82AC /* SnakeBodyPart.swift */,
 				66BD22B223EB349C00FD82AC /* SnakeHead.swift */,
+				66BD22B423EB369700FD82AC /* Snake.swift */,
 				669B07C523E9FDDC001988DB /* Apple.swift */,
 				669B07B323E88E12001988DB /* GameViewController.swift */,
 				669B07B523E88E12001988DB /* Main.storyboard */,
@@ -152,6 +155,7 @@
 				669B07C423E89963001988DB /* GameScene.swift in Sources */,
 				669B07B423E88E12001988DB /* GameViewController.swift in Sources */,
 				66BD22B123EB329C00FD82AC /* SnakeBodyPart.swift in Sources */,
+				66BD22B523EB369700FD82AC /* Snake.swift in Sources */,
 				669B07AC23E88E12001988DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
