@@ -58,6 +58,8 @@ class GameScene: SKScene {
         clockwiseButton.name = "clockwiseButton"
         // добавляю правую кнопку на сцену
         self.addChild(clockwiseButton)
+        // создаем яблоко на старте
+        createApple()
     }
     
     // вызывается при нажатии на экран
@@ -98,6 +100,17 @@ class GameScene: SKScene {
     // вызывается при обработке кадров сцены
     override func update(_ currentTime: TimeInterval) {
         //
+    }
+    
+    // создание яблока в случайной точке сцены
+    func createApple() {
+        // случайная точка на экране
+        let randX = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxX - 5)) + 1)
+        let randY = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxY - 5)) + 1)
+        // создаем яблоко
+        let apple = Apple(position: CGPoint(x: randX, y: randY))
+        // добавляем яблоко на сцену
+        self.addChild(apple)
     }
     
 }
