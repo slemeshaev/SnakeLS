@@ -77,4 +77,16 @@ class Snake: SKShapeNode {
         // запуск действия перемещения
         c.run(moveAction)
     }
+    
+    // поворот по часовой стрелке
+    func moveClockwise() {
+        // смещаем угол на 45 градусов
+        angle += CGFloat(Double.pi/2)
+    }
+    
+    // поворот против часовой стрелке
+    func moveCounterClockwise() {
+        // смещаем угол на 45 градусов
+        angle -= CGFloat(Double.pi/2)
+    }
 }

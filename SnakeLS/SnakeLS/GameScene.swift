@@ -80,6 +80,12 @@ class GameScene: SKScene {
                 touchedNode.name == "counterClockwiseButton" || touchedNode.name == "clockwiseButton" else { return }
             // если это наша кнопка, заливаем ее зеленым цветом
             touchedNode.fillColor = .green
+            // определяем, какая кнопка нажата, и поворачиваем в нужную сторону
+            if touchedNode.name == "counterClockwiseButton" {
+                snake!.moveCounterClockwise()
+            } else if touchedNode.name == "clockwiseButton" {
+                snake!.moveClockwise()
+            }
         }
     }
     
@@ -105,7 +111,7 @@ class GameScene: SKScene {
     
     // вызывается при обработке кадров сцены
     override func update(_ currentTime: TimeInterval) {
-        //
+        snake!.move()
     }
     
     // создание яблока в случайной точке сцены
