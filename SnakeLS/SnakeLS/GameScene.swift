@@ -11,6 +11,9 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    // наша змея
+    var snake: Snake?
+    
     // вызывается при первом запуске сцены
     override func didMove(to view: SKView) {
         // цвет фона сцены
@@ -60,6 +63,9 @@ class GameScene: SKScene {
         self.addChild(clockwiseButton)
         // создаем яблоко на старте
         createApple()
+        // создаем змею по центру экрана и добавляем ее на сцену
+        snake = Snake(atPoint: CGPoint(x: view.scene!.frame.midX, y: view.scene!.frame.midY))
+        self.addChild(snake!)
     }
     
     // вызывается при нажатии на экран
