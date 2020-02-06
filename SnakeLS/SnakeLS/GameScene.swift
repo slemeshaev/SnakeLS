@@ -27,6 +27,9 @@ class GameScene: SKScene {
         // включаем отображение отладочной информации
         view.showsPhysics = true
         
+        // Делаем нашу сцену делегатом соприкосновений
+        self.physicsWorld.contactDelegate = self
+        
         // Делаем кнопку поворота против часовой стрелки
         // создаю нодe (объект)
         let counterClockwiseButton = SKShapeNode()
@@ -125,4 +128,12 @@ class GameScene: SKScene {
         self.addChild(apple)
     }
     
+}
+
+// Имплементируем протокол
+extension GameScene: SKPhysicsContactDelegate {
+    // Добавляем метод отслеживания начала столкновения
+    func didBegin(_ contact: SKPhysicsContact) {
+        //
+    }
 }
