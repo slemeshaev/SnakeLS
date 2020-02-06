@@ -20,6 +20,20 @@
 		66BD22B723EC7B0400FD82AC /* CollisionCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD22B623EC7B0400FD82AC /* CollisionCategories.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		66BD22BF23EC994A00FD82AC /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		669B07A823E88E12001988DB /* SnakeLS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeLS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669B07AB23E88E12001988DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,20 +80,60 @@
 		669B07AA23E88E12001988DB /* SnakeLS */ = {
 			isa = PBXGroup;
 			children = (
+				66BD22B823EC977900FD82AC /* Fundamental */,
+				66BD22B923EC979400FD82AC /* Objects */,
+				66BD22BA23EC97C500FD82AC /* Game */,
+				66BD22BC23EC981600FD82AC /* Storyboards */,
+				66BD22BB23EC97F900FD82AC /* Helpers */,
+			);
+			path = SnakeLS;
+			sourceTree = "<group>";
+		};
+		66BD22B823EC977900FD82AC /* Fundamental */ = {
+			isa = PBXGroup;
+			children = (
 				669B07AB23E88E12001988DB /* AppDelegate.swift */,
-				669B07C323E89963001988DB /* GameScene.swift */,
-				66BD22B623EC7B0400FD82AC /* CollisionCategories.swift */,
+			);
+			path = Fundamental;
+			sourceTree = "<group>";
+		};
+		66BD22B923EC979400FD82AC /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				669B07C523E9FDDC001988DB /* Apple.swift */,
 				66BD22B023EB329C00FD82AC /* SnakeBodyPart.swift */,
 				66BD22B223EB349C00FD82AC /* SnakeHead.swift */,
 				66BD22B423EB369700FD82AC /* Snake.swift */,
-				669B07C523E9FDDC001988DB /* Apple.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		66BD22BA23EC97C500FD82AC /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				669B07C323E89963001988DB /* GameScene.swift */,
 				669B07B323E88E12001988DB /* GameViewController.swift */,
-				669B07B523E88E12001988DB /* Main.storyboard */,
+				66BD22B623EC7B0400FD82AC /* CollisionCategories.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		66BD22BB23EC97F900FD82AC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
 				669B07B823E88E16001988DB /* Assets.xcassets */,
-				669B07BA23E88E16001988DB /* LaunchScreen.storyboard */,
 				669B07BD23E88E16001988DB /* Info.plist */,
 			);
-			path = SnakeLS;
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		66BD22BC23EC981600FD82AC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				669B07B523E88E12001988DB /* Main.storyboard */,
+				669B07BA23E88E16001988DB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +148,7 @@
 				669B07A623E88E12001988DB /* Resources */,
 			);
 			buildRules = (
+				66BD22BF23EC994A00FD82AC /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -306,7 +361,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GWB2H668N;
-				INFOPLIST_FILE = SnakeLS/Info.plist;
+				INFOPLIST_FILE = SnakeLS/Helpers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,7 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GWB2H668N;
-				INFOPLIST_FILE = SnakeLS/Info.plist;
+				INFOPLIST_FILE = SnakeLS/Helpers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
