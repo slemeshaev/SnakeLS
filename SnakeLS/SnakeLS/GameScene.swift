@@ -14,6 +14,9 @@ class GameScene: SKScene {
     // наша змея
     var snake: Snake?
     
+    // яблоко
+    var apple: Apple?
+    
     // вызывается при первом запуске сцены
     override func didMove(to view: SKView) {
         // цвет фона сцены
@@ -122,8 +125,18 @@ class GameScene: SKScene {
         snake!.move()
     }
     
+    // добавление змейки
+    fileprivate func addSnake() {
+        guard let view = self.view, let scene = view.scene else { return }
+        
+        //создаем змею по центру экрана и добавляем ее на сцену
+        let snake = Snake(atPoint: CGPoint(x: scene.frame.midX, y: scene.frame.midY))
+        self.snake = snake
+        self.addChild(snake)
+    }
+    
     // создание яблока в случайной точке сцены
-    func createApple() {
+    fileprivate func createApple() {
         // случайная точка на экране
         let randX = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxX - 5)) + 1)
         let randY = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxY - 5)) + 1)
@@ -133,6 +146,15 @@ class GameScene: SKScene {
         self.addChild(apple)
     }
     
+    // рестарт игры
+    fileprivate func restartGame() {
+        self.snake?.body.forEach { $0.removeFromParent() }
+        self.snake?.removeFromParent()
+        self.snake = nil
+        self.apple?.removeFromParent()
+        self.apple = nil
+        self.addSnake()
+    }
 }
 
 // Имплементируем протокол
@@ -157,9 +179,21 @@ extension GameScene: SKPhysicsContactDelegate {
             // создаем новое яблоко
             createApple()
         case CollisionCategories.EdgeBody:
-            break
+            self.headDidCollideWall(contact)
         default:
             break
         }
+    }
+    
+    private func headDidCollideApple(apple: SKNode?) {
+        //добавляем к змее еще одну секцию
+        snake?.addBodyPart()
+        //удаляем яблоко
+        apple?.removeFromParent()
+        self.apple = nil
+    }
+    
+    private func headDidCollideWall(_ contact: SKPhysicsContact) {
+        self.restartGame()
     }
 }
