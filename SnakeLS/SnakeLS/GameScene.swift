@@ -30,6 +30,11 @@ class GameScene: SKScene {
         // Делаем нашу сцену делегатом соприкосновений
         self.physicsWorld.contactDelegate = self
         
+        // устанавливаем категорию взаимодействия с другими объектами
+        self.physicsBody?.categoryBitMask = CollisionCategories.EdgeBody
+        // устанавливаем категории, с которыми будут пересекаться края сцены
+        self.physicsBody?.collisionBitMask = CollisionCategories.Snake | CollisionCategories.SnakeHead
+        
         // Делаем кнопку поворота против часовой стрелки
         // создаю нодe (объект)
         let counterClockwiseButton = SKShapeNode()
