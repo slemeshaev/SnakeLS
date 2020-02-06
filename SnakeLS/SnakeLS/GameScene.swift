@@ -139,6 +139,27 @@ class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     // Добавляем метод отслеживания начала столкновения
     func didBegin(_ contact: SKPhysicsContact) {
-        //
+        // логическая сумма масок соприкоснувшихся объектов
+        let bodies = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        // вычитаем из суммы голову змеи, и у нас остается маска второго объекта
+        let collisionObject = bodies ^ CollisionCategories.SnakeHead
+        // проверяем, что это за второй объект
+        switch collisionObject {
+        case CollisionCategories.Apple:
+            // проверяем, что это яблоко
+            // яблоко - это один из двух объектов, которые соприкоснулись.
+            // Используем тернарный оператор, чтобы вычислить, какой именно
+            let apple = contact.bodyA.node is Apple ? contact.bodyA.node : contact.bodyB.node
+            // добавляем к змее еще одну секцию
+            snake?.addBodyPart()
+            // удаляем съеденное яблоко со сцены
+            apple?.removeFromParent()
+            // создаем новое яблоко
+            createApple()
+        case CollisionCategories.EdgeBody:
+            break
+        default:
+            break
+        }
     }
 }
