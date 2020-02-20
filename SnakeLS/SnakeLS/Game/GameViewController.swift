@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
         
         // создаю экземпляр сцены
         let scene = GameScene(size: view.bounds.size)
+        scene.gameDelegate = self
         
         // получаю главную область экрана
         let skView = view as! SKView
