@@ -8,23 +8,24 @@
 
 import UIKit
 
-class MainMenuViewController: UIViewController {
+final class MainMenuViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    @IBOutlet weak var startGameButton: UIButton!
+    @IBOutlet weak var lastResultLabel: UILabel!
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        switch segue.identifier {
+        case "startGameSegue":
+            guard let destination = segue.destination as? GameViewController else { return }
+            destination.delegate = self
+        default:
+            break
+        }
     }
-    */
+}
 
+extension MainMenuViewController: GameViewControllerDelegate {
+    func didEndGame(withResult result: Int) {
+        self.lastResultLabel.text = "Последний результат: \(result)"
+    }
 }

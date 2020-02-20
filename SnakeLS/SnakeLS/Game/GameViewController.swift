@@ -10,7 +10,13 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+protocol GameViewControllerDelegate: class {
+    func didEndGame(withResult result: Int)
+}
+
 class GameViewController: UIViewController {
+    
+    weak var delegate: GameViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,5 +43,12 @@ class GameViewController: UIViewController {
         // добавляю сцену на экран
         skView.presentScene(scene)
         
+    }
+}
+
+extension GameViewController: GameSceneDelegate {
+    func didEndGame(withResult result: Int) {
+        self.delegate?.didEndGame(withResult: result)
+        self.dismiss(animated: true, completion: nil)
     }
 }
