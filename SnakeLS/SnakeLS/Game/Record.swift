@@ -6,4 +6,9 @@
 //  Copyright © 2020 Станислав Лемешаев. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct Record {
+    let date: Date
+    let score: Int
+}

@@ -9,13 +9,23 @@
 import UIKit
 
 class RecordsViewController: UITableView {
+    
+}
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+extension RecordsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Game.shared.records.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath)
+        let record = Game.shared.records[indexPath.row]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        cell.textLabel?.text = dateFormatter.string(from: record.date)
+        cell.detailTextLabel?.text = "\(record.score)"
+        return cell
+    }
+    
 }
