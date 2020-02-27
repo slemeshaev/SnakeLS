@@ -17,15 +17,11 @@ final class MainMenuViewController: UIViewController {
         switch segue.identifier {
         case "startGameSegue":
             guard let destination = segue.destination as? GameViewController else { return }
-            destination.delegate = self
+            destination.onGameEnd = { [weak self] result in
+                self?.lastResultLabel.text = "Последний результат: \(result)"
+            }
         default:
             break
         }
-    }
-}
-
-extension MainMenuViewController: GameViewControllerDelegate {
-    func didEndGame(withResult result: Int) {
-        self.lastResultLabel.text = "Последний результат: \(result)"
     }
 }

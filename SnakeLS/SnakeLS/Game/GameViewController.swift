@@ -10,20 +10,19 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-protocol GameViewControllerDelegate: class {
-    func didEndGame(withResult result: Int)
-}
-
 class GameViewController: UIViewController {
     
-    weak var delegate: GameViewControllerDelegate?
+    var onGameEnd: ((Int) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // создаю экземпляр сцены
         let scene = GameScene(size: view.bounds.size)
-        scene.gameDelegate = self
+        scene.onGameEnd = { [weak self] result in
+            self?.onGameEnd?(result)
+            self?.dismiss(animated: true, completion: nil)
+        }
         
         // получаю главную область экрана
         let skView = view as! SKView
@@ -43,12 +42,5 @@ class GameViewController: UIViewController {
         // добавляю сцену на экран
         skView.presentScene(scene)
         
-    }
-}
-
-extension GameViewController: GameSceneDelegate {
-    func didEndGame(withResult result: Int) {
-        self.delegate?.didEndGame(withResult: result)
-        self.dismiss(animated: true, completion: nil)
     }
 }

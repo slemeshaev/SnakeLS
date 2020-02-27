@@ -17,8 +17,9 @@ class GameScene: SKScene {
     // яблоко
     var apple: Apple?
     
-    // ссылка на делегат
-    weak var gameDelegate: GameSceneDelegate?
+    //
+    var onGameEnd: ((Int) -> Void)?
+    
     
     // вызывается при первом запуске сцены
     override func didMove(to view: SKView) {
@@ -198,10 +199,6 @@ extension GameScene: SKPhysicsContactDelegate {
     
     private func headDidCollideWall(_ contact: SKPhysicsContact) {
         guard let snake = self.snake else { return }
-        self.gameDelegate?.didEndGame(withResult: snake.body.count - 1)
+        self.onGameEnd?(snake.body.count - 1)
     }
-}
-
-protocol GameSceneDelegate: class {
-    func didEndGame(withResult result: Int)
 }
