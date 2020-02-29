@@ -8,9 +8,10 @@
 
 import UIKit
 
-class RecordsViewController: UITableView {
+class RecordsViewController: UITableView, UITableViewDelegate {
     
 }
+
 
 extension RecordsViewController: UITableViewDataSource {
     

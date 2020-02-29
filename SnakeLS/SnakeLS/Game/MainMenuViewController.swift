@@ -24,4 +24,7 @@ final class MainMenuViewController: UIViewController {
             break
         }
     }
+    
+    @IBAction func closeButton(_ sender: UIStoryboardSegue) { }
+    
 }
