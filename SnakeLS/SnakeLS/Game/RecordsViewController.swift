@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecordsViewController: UITableView, UITableViewDelegate {
+class RecordsViewController: UIViewController, UITableViewDelegate {
     
 }
 
