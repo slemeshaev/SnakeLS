@@ -12,9 +12,17 @@ final class Game {
     
     static let shared = Game()
     
-    private(set) var records: [Record] = []
+    private(set) var records: [Record] {
+        didSet {
+            recordsCaretaker.save(records: self.records)
+        }
+    }
     
-    private init() {}
+    private let recordsCaretaker = RecordsCaretaker()
+    
+    private init() {
+        self.records = self.recordsCaretaker.retriveRecords()
+    }
     
     func addRecord(_ record: Record) {
         self.records.append(record)
