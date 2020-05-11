@@ -8,12 +8,7 @@
 
 import UIKit
 
-class RecordsViewController: UIViewController, UITableViewDelegate {
-    
-}
-
-
-extension RecordsViewController: UITableViewDataSource {
+class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Game.shared.records.count
