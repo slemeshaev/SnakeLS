@@ -11,12 +11,18 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    var onGameEnd: ((Int) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // создаю экземпляр сцены
         let scene = GameScene(size: view.bounds.size)
+        scene.onGameEnd = { [weak self] result in
+            self?.onGameEnd?(result)
+            self?.dismiss(animated: true, completion: nil)
+        }
         
         // получаю главную область экрана
         let skView = view as! SKView
