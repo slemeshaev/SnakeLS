@@ -13,12 +13,38 @@ import GameplayKit
 class GameViewController: UIViewController {
     
     var onGameEnd: ((Int) -> Void)?
+    
+    var difficulty: Difficulty = .medium
+    
+    private var createAppleStrategy: CreateApplesStrategy {
+        switch self.difficulty {
+        case .easy:
+            return SequentialCreateOneAppleStrategy()
+        case .medium, .hard, .insane:
+            return RandomCreateOneAppleStrategy()
+        }
+    }
+    
+    private var snakeSpeedStrategy: SnakeSpeedStrategy {
+        switch self.difficulty {
+        case .easy, .medium:
+            return NotIncreaseSnakeSpeedStrategy​()
+        case .hard:
+            let strategy = ArithmeticProgressionSnakeSpeedStrategy​()
+            strategy.maxSpeed = 1000.0
+            return strategy
+        case .insane:
+            return ​GeometricProgressionSnakeSpeedStrategy()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // создаю экземпляр сцены
-        let scene = GameScene(size: view.bounds.size)
+        let scene = GameScene(size: view.bounds.size,
+                              createApplesStrategy: self.createAppleStrategy,
+                              snakeSpeedStrategy: self.snakeSpeedStrategy)
         scene.onGameEnd = { [weak self] result in
             self?.onGameEnd?(result)
             self?.dismiss(animated: true, completion: nil)

@@ -16,7 +16,7 @@ class Snake: SKShapeNode {
     var body = [SnakeBodyPart]()
     
     // скорость перемещения змеи
-    let moveSpeed = 125.0
+    var moveSpeed = 125.0
     
     // угол, необходимый для расчета направления
     var angle: CGFloat = 0.0

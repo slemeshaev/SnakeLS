@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oEl-D9-bAg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oEl-D9-bAg">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -15,6 +15,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="s6A-ar-cmh">
+                                <rect key="frame" x="38" y="50" width="299" height="32"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="Легко"/>
+                                    <segment title="Средне"/>
+                                    <segment title="Сложно"/>
+                                    <segment title="Безумно"/>
+                                </segments>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8H-Ve-3kw">
                                 <rect key="frame" x="105" y="247" width="165" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -42,29 +54,40 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TJd-7J-2NZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="M8H-Ve-3kw" secondAttribute="trailing" constant="15" id="1Yh-NE-5k8"/>
+                            <constraint firstItem="s6A-ar-cmh" firstAttribute="centerX" secondItem="STv-3H-6fu" secondAttribute="centerX" id="2S2-bk-cHb"/>
                             <constraint firstItem="XF9-oI-ZAa" firstAttribute="centerX" secondItem="STv-3H-6fu" secondAttribute="centerX" id="6Gt-oz-Pf2"/>
                             <constraint firstItem="Iv5-bK-muy" firstAttribute="centerX" secondItem="STv-3H-6fu" secondAttribute="centerX" id="9X8-Op-O3R"/>
                             <constraint firstItem="XF9-oI-ZAa" firstAttribute="top" secondItem="M8H-Ve-3kw" secondAttribute="bottom" constant="15" id="Dlx-1J-crC"/>
                             <constraint firstItem="M8H-Ve-3kw" firstAttribute="centerX" secondItem="STv-3H-6fu" secondAttribute="centerX" id="RGh-u4-UQx"/>
                             <constraint firstItem="TJd-7J-2NZ" firstAttribute="bottom" secondItem="Iv5-bK-muy" secondAttribute="bottom" constant="20" id="Yi6-Vr-Svg"/>
                             <constraint firstItem="XF9-oI-ZAa" firstAttribute="centerY" secondItem="STv-3H-6fu" secondAttribute="centerY" id="bC3-dd-qAH"/>
+                            <constraint firstItem="s6A-ar-cmh" firstAttribute="top" secondItem="TJd-7J-2NZ" secondAttribute="top" constant="50" id="mvC-ez-bId"/>
                             <constraint firstItem="M8H-Ve-3kw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TJd-7J-2NZ" secondAttribute="leading" constant="15" id="neD-rn-yze"/>
                             <constraint firstItem="TJd-7J-2NZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Iv5-bK-muy" secondAttribute="trailing" constant="15" id="vqW-MM-Gii"/>
                             <constraint firstItem="Iv5-bK-muy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TJd-7J-2NZ" secondAttribute="leading" constant="15" id="zar-yi-Jiu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TJd-7J-2NZ"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" red="0.0" green="0.28007081150000002" blue="0.40901792050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" red="0.30980392159999998" green="0.61176470589999998" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="difficultyControl" destination="s6A-ar-cmh" id="AWk-R8-6A6"/>
                         <outlet property="lastResultLabel" destination="Iv5-bK-muy" id="9fc-ZW-Dij"/>
                         <outlet property="startGameButton" destination="M8H-Ve-3kw" id="dud-TT-MD5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3U-pM-Bab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-394" y="46"/>
+            <point key="canvasLocation" x="-394.39999999999998" y="45.42728635682159"/>
         </scene>
         <!--Records View Controller-->
         <scene sceneID="V3B-lS-oCf">
@@ -149,7 +172,7 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <navigationItem key="navigationItem" id="9ZE-7E-xDl"/>

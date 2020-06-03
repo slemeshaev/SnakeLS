@@ -17,9 +17,24 @@ class GameScene: SKScene {
     // яблоко
     var apple: Apple?
     
-    //
+    // завершение игры
     var onGameEnd: ((Int) -> Void)?
     
+    // свойство, хранящее стратегию появления яблок
+    private let createApplesStrategy: CreateApplesStrategy
+    // свойство увелисения скорости змеи
+    fileprivate let snakeSpeedStrategy: SnakeSpeedStrategy
+    init(size: CGSize,
+         createApplesStrategy: CreateApplesStrategy,
+         snakeSpeedStrategy: SnakeSpeedStrategy) {
+        self.createApplesStrategy = createApplesStrategy
+        self.snakeSpeedStrategy = snakeSpeedStrategy
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // вызывается при первом запуске сцены
     override func didMove(to view: SKView) {
@@ -141,11 +156,10 @@ class GameScene: SKScene {
     
     // создание яблока в случайной точке сцены
     fileprivate func createApple() {
-        // случайная точка на экране
-        let randX = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxX - 5)) + 1)
-        let randY = CGFloat(arc4random_uniform(UInt32(view!.scene!.frame.maxY - 5)) + 1)
-        // создаем яблоко
-        let apple = Apple(position: CGPoint(x: randX, y: randY))
+        guard let view = self.view, let scene = view.scene else { return }
+        let apples = self.createApplesStrategy.createApples(in: scene.frame)
+        guard let apple = apples.first else { return }
+        self.apple = apple
         // добавляем яблоко на сцену
         self.addChild(apple)
     }
@@ -195,6 +209,10 @@ extension GameScene: SKPhysicsContactDelegate {
         //удаляем яблоко
         apple?.removeFromParent()
         self.apple = nil
+        // создаем новое яблоко
+        createApple()
+        
+        self.snakeSpeedStrategy.increaseSpeedByEatingApple()
     }
     
     private func headDidCollideWall(_ contact: SKPhysicsContact) {

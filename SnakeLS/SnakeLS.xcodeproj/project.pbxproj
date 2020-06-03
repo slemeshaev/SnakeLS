@@ -11,6 +11,10 @@
 		661974F72408447F0081945B /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661974F62408447F0081945B /* RecordsViewController.swift */; };
 		666157AD24084DFA00475C0C /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666157AC24084DFA00475C0C /* Record.swift */; };
 		666157AF24084E7200475C0C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666157AE24084E7200475C0C /* Game.swift */; };
+		667DD3092487CF30006D5C5F /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DD3082487CF30006D5C5F /* Difficulty.swift */; };
+		667DD30B2487D7D3006D5C5F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DD30A2487D7D3006D5C5F /* GradientView.swift */; };
+		667DD30D2487E34F006D5C5F /* CreateApplesStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DD30C2487E34F006D5C5F /* CreateApplesStrategy.swift */; };
+		667DD30F2487EC82006D5C5F /* ​SnakeSpeedStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DD30E2487EC82006D5C5F /* ​SnakeSpeedStrategy.swift */; };
 		66961EA0243CE1C400AE851D /* RecordsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66961E9F243CE1C400AE851D /* RecordsCaretaker.swift */; };
 		669B07AC23E88E12001988DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669B07AB23E88E12001988DB /* AppDelegate.swift */; };
 		669B07B423E88E12001988DB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669B07B323E88E12001988DB /* GameViewController.swift */; };
@@ -44,6 +48,10 @@
 		661974F62408447F0081945B /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		666157AC24084DFA00475C0C /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		666157AE24084E7200475C0C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		667DD3082487CF30006D5C5F /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		667DD30A2487D7D3006D5C5F /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		667DD30C2487E34F006D5C5F /* CreateApplesStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateApplesStrategy.swift; sourceTree = "<group>"; };
+		667DD30E2487EC82006D5C5F /* ​SnakeSpeedStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "​SnakeSpeedStrategy.swift"; sourceTree = "<group>"; };
 		66961E9F243CE1C400AE851D /* RecordsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCaretaker.swift; sourceTree = "<group>"; };
 		669B07A823E88E12001988DB /* SnakeLS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeLS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669B07AB23E88E12001988DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		667DD310248848BC006D5C5F /* StrategyGame */ = {
+			isa = PBXGroup;
+			children = (
+				667DD30C2487E34F006D5C5F /* CreateApplesStrategy.swift */,
+				667DD30E2487EC82006D5C5F /* ​SnakeSpeedStrategy.swift */,
+			);
+			path = StrategyGame;
+			sourceTree = "<group>";
+		};
 		669B079F23E88E12001988DB = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +109,7 @@
 			children = (
 				66BD22B823EC977900FD82AC /* Fundamental */,
 				66BD22B923EC979400FD82AC /* Objects */,
+				667DD310248848BC006D5C5F /* StrategyGame */,
 				66BD22BA23EC97C500FD82AC /* Game */,
 				66BD22BC23EC981600FD82AC /* Storyboards */,
 				66BD22BB23EC97F900FD82AC /* Helpers */,
@@ -135,7 +153,9 @@
 		66BD22BB23EC97F900FD82AC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				667DD30A2487D7D3006D5C5F /* GradientView.swift */,
 				66961E9F243CE1C400AE851D /* RecordsCaretaker.swift */,
+				667DD3082487CF30006D5C5F /* Difficulty.swift */,
 				669B07B823E88E16001988DB /* Assets.xcassets */,
 				669B07BD23E88E16001988DB /* Info.plist */,
 			);
@@ -224,12 +244,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				66961EA0243CE1C400AE851D /* RecordsCaretaker.swift in Sources */,
+				667DD30D2487E34F006D5C5F /* CreateApplesStrategy.swift in Sources */,
 				661974E223FF183A0081945B /* MainMenuViewController.swift in Sources */,
+				667DD30B2487D7D3006D5C5F /* GradientView.swift in Sources */,
+				667DD3092487CF30006D5C5F /* Difficulty.swift in Sources */,
 				66BD22B323EB349C00FD82AC /* SnakeHead.swift in Sources */,
 				669B07C623E9FDDC001988DB /* Apple.swift in Sources */,
 				669B07C423E89963001988DB /* GameScene.swift in Sources */,
 				669B07B423E88E12001988DB /* GameViewController.swift in Sources */,
 				66BD22B123EB329C00FD82AC /* SnakeBodyPart.swift in Sources */,
+				667DD30F2487EC82006D5C5F /* ​SnakeSpeedStrategy.swift in Sources */,
 				666157AD24084DFA00475C0C /* Record.swift in Sources */,
 				666157AF24084E7200475C0C /* Game.swift in Sources */,
 				66BD22B523EB369700FD82AC /* Snake.swift in Sources */,

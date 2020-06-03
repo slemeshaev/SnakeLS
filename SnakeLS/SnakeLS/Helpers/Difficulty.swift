@@ -6,4 +6,8 @@
 //  Copyright © 2020 Станислав Лемешаев. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+enum Difficulty {
+    case easy, medium, hard, insane 
+}
