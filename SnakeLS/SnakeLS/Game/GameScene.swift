@@ -21,14 +21,16 @@ class GameScene: SKScene {
     var onGameEnd: ((Int) -> Void)?
     
     // свойство, хранящее стратегию появления яблок
-    private let createApplesStrategy: CreateApplesStrategy
+    //private let createApplesStrategy: CreateApplesStrategy
+    
     // свойство увелисения скорости змеи
-    fileprivate let snakeSpeedStrategy: SnakeSpeedStrategy
-    init(size: CGSize,
-         createApplesStrategy: CreateApplesStrategy,
-         snakeSpeedStrategy: SnakeSpeedStrategy) {
-        self.createApplesStrategy = createApplesStrategy
-        self.snakeSpeedStrategy = snakeSpeedStrategy
+    //fileprivate let snakeSpeedStrategy: SnakeSpeedStrategy
+    
+    //
+    fileprivate let difficultyFacade: DifficultySettingsFacade
+    
+    init(size: CGSize, difficulty: Difficulty) {
+        self.difficultyFacade = DifficultySettingsFacade(difficulty: difficulty)
         super.init(size: size)
     }
     
@@ -156,9 +158,7 @@ class GameScene: SKScene {
     
     // создание яблока в случайной точке сцены
     fileprivate func createApple() {
-        guard let view = self.view, let scene = view.scene else { return }
-        let apples = self.createApplesStrategy.createApples(in: scene.frame)
-        guard let apple = apples.first else { return }
+        let apple = self.difficultyFacade.createApples(in: self).first!
         self.apple = apple
         // добавляем яблоко на сцену
         self.addChild(apple)
@@ -212,7 +212,7 @@ extension GameScene: SKPhysicsContactDelegate {
         // создаем новое яблоко
         createApple()
         
-        self.snakeSpeedStrategy.increaseSpeedByEatingApple()
+        self.difficultyFacade.increaseSnakeSpeed()
     }
     
     private func headDidCollideWall(_ contact: SKPhysicsContact) {

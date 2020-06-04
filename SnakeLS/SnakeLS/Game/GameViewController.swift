@@ -42,9 +42,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         // создаю экземпляр сцены
-        let scene = GameScene(size: view.bounds.size,
-                              createApplesStrategy: self.createAppleStrategy,
-                              snakeSpeedStrategy: self.snakeSpeedStrategy)
+        let scene = GameScene(size: view.bounds.size, difficulty: self.difficulty)
         scene.onGameEnd = { [weak self] result in
             self?.onGameEnd?(result)
             self?.dismiss(animated: true, completion: nil)
