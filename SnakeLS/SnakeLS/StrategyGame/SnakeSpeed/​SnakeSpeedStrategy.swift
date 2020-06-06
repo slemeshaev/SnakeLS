@@ -14,31 +14,6 @@ protocol SnakeSpeedStrategy: class {
     func increaseSpeedByEatingApple()
 }
 
-// простая стратегия (ничего не делает)
-final class NotIncreaseSnakeSpeedStrategy​: SnakeSpeedStrategy {
-    var snake: Snake?
-    var maxSpeed: Double?
-    func increaseSpeedByEatingApple() {}
-}
-
-// стратегия увеличения скорости в арифметической прогрессии
-final class ArithmeticProgressionSnakeSpeedStrategy​: SnakeSpeedStrategy {
-    var snake: Snake?
-    var maxSpeed: Double?
-    
-    private let diff = 10.0 // на сколько будет увеличена скорость
-    
-    func increaseSpeedByEatingApple() {
-        guard let snake = snake else { return }
-        snake.moveSpeed.value += self.diff
-        if let maxSpeed = maxSpeed {
-            if snake.moveSpeed.value > maxSpeed {
-                snake.moveSpeed.value = maxSpeed
-            }
-        }
-    }
-}
-
 // увеличение скорости в геометрической прогрессии
 final class ​GeometricProgressionSnakeSpeedStrategy: SnakeSpeedStrategy {
     var snake: Snake?
@@ -55,4 +30,5 @@ final class ​GeometricProgressionSnakeSpeedStrategy: SnakeSpeedStrategy {
             }
         }
     }
+    
 }
