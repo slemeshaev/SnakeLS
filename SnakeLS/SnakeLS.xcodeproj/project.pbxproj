@@ -24,6 +24,7 @@
 		669B07C423E89963001988DB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669B07C323E89963001988DB /* GameScene.swift */; };
 		669B07C623E9FDDC001988DB /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669B07C523E9FDDC001988DB /* Apple.swift */; };
 		66B2F00C2489576200E20C46 /* DifficultySettingsFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F00B2489576200E20C46 /* DifficultySettingsFacade.swift */; };
+		66B2F00E248BB5EB00E20C46 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F00D248BB5EB00E20C46 /* Observable.swift */; };
 		66BD22B123EB329C00FD82AC /* SnakeBodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD22B023EB329C00FD82AC /* SnakeBodyPart.swift */; };
 		66BD22B323EB349C00FD82AC /* SnakeHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD22B223EB349C00FD82AC /* SnakeHead.swift */; };
 		66BD22B523EB369700FD82AC /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD22B423EB369700FD82AC /* Snake.swift */; };
@@ -64,6 +65,7 @@
 		669B07C323E89963001988DB /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		669B07C523E9FDDC001988DB /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
 		66B2F00B2489576200E20C46 /* DifficultySettingsFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultySettingsFacade.swift; sourceTree = "<group>"; };
+		66B2F00D248BB5EB00E20C46 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		66BD22B023EB329C00FD82AC /* SnakeBodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeBodyPart.swift; sourceTree = "<group>"; };
 		66BD22B223EB349C00FD82AC /* SnakeHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeHead.swift; sourceTree = "<group>"; };
 		66BD22B423EB369700FD82AC /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				667DD30A2487D7D3006D5C5F /* GradientView.swift */,
 				66961E9F243CE1C400AE851D /* RecordsCaretaker.swift */,
 				667DD3082487CF30006D5C5F /* Difficulty.swift */,
+				66B2F00D248BB5EB00E20C46 /* Observable.swift */,
 				669B07B823E88E16001988DB /* Assets.xcassets */,
 				669B07BD23E88E16001988DB /* Info.plist */,
 			);
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66B2F00E248BB5EB00E20C46 /* Observable.swift in Sources */,
 				66961EA0243CE1C400AE851D /* RecordsCaretaker.swift in Sources */,
 				667DD30D2487E34F006D5C5F /* CreateApplesStrategy.swift in Sources */,
 				661974E223FF183A0081945B /* MainMenuViewController.swift in Sources */,
