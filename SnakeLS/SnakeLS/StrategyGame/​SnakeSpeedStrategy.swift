@@ -30,10 +30,10 @@ final class ArithmeticProgressionSnakeSpeedStrategy​: SnakeSpeedStrategy {
     
     func increaseSpeedByEatingApple() {
         guard let snake = snake else { return }
-        snake.moveSpeed += self.diff
+        snake.moveSpeed.value += self.diff
         if let maxSpeed = maxSpeed {
-            if snake.moveSpeed > maxSpeed {
-                snake.moveSpeed = maxSpeed
+            if snake.moveSpeed.value > maxSpeed {
+                snake.moveSpeed.value = maxSpeed
             }
         }
     }
@@ -48,10 +48,10 @@ final class ​GeometricProgressionSnakeSpeedStrategy: SnakeSpeedStrategy {
     
     func increaseSpeedByEatingApple() {
         guard let snake = snake else { return }
-        snake.moveSpeed *= diff
+        snake.moveSpeed.value *= diff
         if let maxSpeed = maxSpeed {
-            if snake.moveSpeed > maxSpeed {
-                snake.moveSpeed = maxSpeed
+            if snake.moveSpeed.value > maxSpeed {
+                snake.moveSpeed.value = maxSpeed
             }
         }
     }
