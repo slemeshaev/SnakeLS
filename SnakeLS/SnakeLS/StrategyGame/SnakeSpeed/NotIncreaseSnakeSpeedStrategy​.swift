@@ -9,8 +9,8 @@
 import UIKit
 
 // простая стратегия (ничего не делает)
-final class NotIncreaseSnakeSpeedStrategy​: SnakeSpeedStrategy {
+final class NotIncreaseSnakeSpeedStrategy: SnakeSpeedStrategy {
     var snake: Snake?
     var maxSpeed: Double?
-    func increaseSpeedByEatingApple() {}
+    func increaseSpeedByEatingApple() { }
 }

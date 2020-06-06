@@ -25,6 +25,11 @@
 		669B07C623E9FDDC001988DB /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669B07C523E9FDDC001988DB /* Apple.swift */; };
 		66B2F00C2489576200E20C46 /* DifficultySettingsFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F00B2489576200E20C46 /* DifficultySettingsFacade.swift */; };
 		66B2F00E248BB5EB00E20C46 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F00D248BB5EB00E20C46 /* Observable.swift */; };
+		66B2F011248BC2C000E20C46 /* NotIncreaseSnakeSpeedStrategy​.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F010248BC2C000E20C46 /* NotIncreaseSnakeSpeedStrategy​.swift */; };
+		66B2F013248BC30700E20C46 /* ArithmeticProgressionSnakeSpeedStrategy​.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F012248BC30700E20C46 /* ArithmeticProgressionSnakeSpeedStrategy​.swift */; };
+		66B2F015248BC34700E20C46 /* ​GeometricProgressionSnakeSpeedStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F014248BC34700E20C46 /* ​GeometricProgressionSnakeSpeedStrategy.swift */; };
+		66B2F018248BC40D00E20C46 /* RandomCreateOneAppleStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F017248BC40D00E20C46 /* RandomCreateOneAppleStrategy.swift */; };
+		66B2F01A248BC45100E20C46 /* SequentialCreateOneAppleStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F019248BC45100E20C46 /* SequentialCreateOneAppleStrategy.swift */; };
 		66BD22B123EB329C00FD82AC /* SnakeBodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD22B023EB329C00FD82AC /* SnakeBodyPart.swift */; };
 		66BD22B323EB349C00FD82AC /* SnakeHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD22B223EB349C00FD82AC /* SnakeHead.swift */; };
 		66BD22B523EB369700FD82AC /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BD22B423EB369700FD82AC /* Snake.swift */; };
@@ -66,6 +71,11 @@
 		669B07C523E9FDDC001988DB /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
 		66B2F00B2489576200E20C46 /* DifficultySettingsFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultySettingsFacade.swift; sourceTree = "<group>"; };
 		66B2F00D248BB5EB00E20C46 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		66B2F010248BC2C000E20C46 /* NotIncreaseSnakeSpeedStrategy​.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotIncreaseSnakeSpeedStrategy​.swift"; sourceTree = "<group>"; };
+		66B2F012248BC30700E20C46 /* ArithmeticProgressionSnakeSpeedStrategy​.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArithmeticProgressionSnakeSpeedStrategy​.swift"; sourceTree = "<group>"; };
+		66B2F014248BC34700E20C46 /* ​GeometricProgressionSnakeSpeedStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "​GeometricProgressionSnakeSpeedStrategy.swift"; sourceTree = "<group>"; };
+		66B2F017248BC40D00E20C46 /* RandomCreateOneAppleStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCreateOneAppleStrategy.swift; sourceTree = "<group>"; };
+		66B2F019248BC45100E20C46 /* SequentialCreateOneAppleStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentialCreateOneAppleStrategy.swift; sourceTree = "<group>"; };
 		66BD22B023EB329C00FD82AC /* SnakeBodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeBodyPart.swift; sourceTree = "<group>"; };
 		66BD22B223EB349C00FD82AC /* SnakeHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeHead.swift; sourceTree = "<group>"; };
 		66BD22B423EB369700FD82AC /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
@@ -86,9 +96,8 @@
 		667DD310248848BC006D5C5F /* StrategyGame */ = {
 			isa = PBXGroup;
 			children = (
-				667DD30C2487E34F006D5C5F /* CreateApplesStrategy.swift */,
-				667DD30E2487EC82006D5C5F /* ​SnakeSpeedStrategy.swift */,
-				66B2F00B2489576200E20C46 /* DifficultySettingsFacade.swift */,
+				66B2F016248BC3C800E20C46 /* CreateApples */,
+				66B2F00F248BC28E00E20C46 /* SnakeSpeed */,
 			);
 			path = StrategyGame;
 			sourceTree = "<group>";
@@ -122,10 +131,32 @@
 			path = SnakeLS;
 			sourceTree = "<group>";
 		};
+		66B2F00F248BC28E00E20C46 /* SnakeSpeed */ = {
+			isa = PBXGroup;
+			children = (
+				667DD30E2487EC82006D5C5F /* ​SnakeSpeedStrategy.swift */,
+				66B2F010248BC2C000E20C46 /* NotIncreaseSnakeSpeedStrategy​.swift */,
+				66B2F012248BC30700E20C46 /* ArithmeticProgressionSnakeSpeedStrategy​.swift */,
+				66B2F014248BC34700E20C46 /* ​GeometricProgressionSnakeSpeedStrategy.swift */,
+			);
+			path = SnakeSpeed;
+			sourceTree = "<group>";
+		};
+		66B2F016248BC3C800E20C46 /* CreateApples */ = {
+			isa = PBXGroup;
+			children = (
+				667DD30C2487E34F006D5C5F /* CreateApplesStrategy.swift */,
+				66B2F017248BC40D00E20C46 /* RandomCreateOneAppleStrategy.swift */,
+				66B2F019248BC45100E20C46 /* SequentialCreateOneAppleStrategy.swift */,
+			);
+			path = CreateApples;
+			sourceTree = "<group>";
+		};
 		66BD22B823EC977900FD82AC /* Fundamental */ = {
 			isa = PBXGroup;
 			children = (
 				669B07AB23E88E12001988DB /* AppDelegate.swift */,
+				66B2F00D248BB5EB00E20C46 /* Observable.swift */,
 			);
 			path = Fundamental;
 			sourceTree = "<group>";
@@ -137,6 +168,9 @@
 				66BD22B023EB329C00FD82AC /* SnakeBodyPart.swift */,
 				66BD22B223EB349C00FD82AC /* SnakeHead.swift */,
 				66BD22B423EB369700FD82AC /* Snake.swift */,
+				666157AE24084E7200475C0C /* Game.swift */,
+				666157AC24084DFA00475C0C /* Record.swift */,
+				667DD3082487CF30006D5C5F /* Difficulty.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -149,8 +183,7 @@
 				661974E123FF183A0081945B /* MainMenuViewController.swift */,
 				66BD22B623EC7B0400FD82AC /* CollisionCategories.swift */,
 				661974F62408447F0081945B /* RecordsViewController.swift */,
-				666157AE24084E7200475C0C /* Game.swift */,
-				666157AC24084DFA00475C0C /* Record.swift */,
+				66B2F00B2489576200E20C46 /* DifficultySettingsFacade.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -160,8 +193,6 @@
 			children = (
 				667DD30A2487D7D3006D5C5F /* GradientView.swift */,
 				66961E9F243CE1C400AE851D /* RecordsCaretaker.swift */,
-				667DD3082487CF30006D5C5F /* Difficulty.swift */,
-				66B2F00D248BB5EB00E20C46 /* Observable.swift */,
 				669B07B823E88E16001988DB /* Assets.xcassets */,
 				669B07BD23E88E16001988DB /* Info.plist */,
 			);
@@ -252,14 +283,19 @@
 				66B2F00E248BB5EB00E20C46 /* Observable.swift in Sources */,
 				66961EA0243CE1C400AE851D /* RecordsCaretaker.swift in Sources */,
 				667DD30D2487E34F006D5C5F /* CreateApplesStrategy.swift in Sources */,
+				66B2F011248BC2C000E20C46 /* NotIncreaseSnakeSpeedStrategy​.swift in Sources */,
 				661974E223FF183A0081945B /* MainMenuViewController.swift in Sources */,
 				66B2F00C2489576200E20C46 /* DifficultySettingsFacade.swift in Sources */,
 				667DD30B2487D7D3006D5C5F /* GradientView.swift in Sources */,
+				66B2F01A248BC45100E20C46 /* SequentialCreateOneAppleStrategy.swift in Sources */,
+				66B2F015248BC34700E20C46 /* ​GeometricProgressionSnakeSpeedStrategy.swift in Sources */,
 				667DD3092487CF30006D5C5F /* Difficulty.swift in Sources */,
+				66B2F018248BC40D00E20C46 /* RandomCreateOneAppleStrategy.swift in Sources */,
 				66BD22B323EB349C00FD82AC /* SnakeHead.swift in Sources */,
 				669B07C623E9FDDC001988DB /* Apple.swift in Sources */,
 				669B07C423E89963001988DB /* GameScene.swift in Sources */,
 				669B07B423E88E12001988DB /* GameViewController.swift in Sources */,
+				66B2F013248BC30700E20C46 /* ArithmeticProgressionSnakeSpeedStrategy​.swift in Sources */,
 				66BD22B123EB329C00FD82AC /* SnakeBodyPart.swift in Sources */,
 				667DD30F2487EC82006D5C5F /* ​SnakeSpeedStrategy.swift in Sources */,
 				666157AD24084DFA00475C0C /* Record.swift in Sources */,

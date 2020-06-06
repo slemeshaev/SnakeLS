@@ -12,6 +12,9 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    
+    @IBOutlet weak var speedLabel: UILabel!
+    
     var onGameEnd: ((Int) -> Void)?
     
     var difficulty: Difficulty = .medium
@@ -28,13 +31,13 @@ class GameViewController: UIViewController {
     private var snakeSpeedStrategy: SnakeSpeedStrategy {
         switch self.difficulty {
         case .easy, .medium:
-            return NotIncreaseSnakeSpeedStrategy​()
+            return NotIncreaseSnakeSpeedStrategy()
         case .hard:
-            let strategy = ArithmeticProgressionSnakeSpeedStrategy​()
-            strategy.maxSpeed = 1000.0
+            let strategy = ArithmeticProgressionSnakeSpeedStrategy()
+            strategy.maxSpeed = 350.0
             return strategy
         case .insane:
-            return ​GeometricProgressionSnakeSpeedStrategy()
+            return GeometricProgressionSnakeSpeedStrategy()
         }
     }
 
@@ -42,7 +45,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         // создаю экземпляр сцены
-        let scene = GameScene(size: view.bounds.size, difficulty: self.difficulty)
+        let scene = GameScene(size: view.bounds.size,
+                              difficulty: self.difficulty)
+        
         scene.onGameEnd = { [weak self] result in
             self?.onGameEnd?(result)
             self?.dismiss(animated: true, completion: nil)
@@ -66,5 +71,23 @@ class GameViewController: UIViewController {
         // добавляю сцену на экран
         skView.presentScene(scene)
         
+        scene.snake?.moveSpeed.addObserver(self, options: [.new, .initial], closure: { [weak self] (moveSpeed, _) in
+            self?.speedLabel.text = "Скорость змеи: \(moveSpeed)"
+        })
     }
+    
+    // MARK: - UIViewController
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
+        } else {
+            return .all
+        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
 }

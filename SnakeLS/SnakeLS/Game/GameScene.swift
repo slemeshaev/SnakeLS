@@ -20,13 +20,7 @@ class GameScene: SKScene {
     // завершение игры
     var onGameEnd: ((Int) -> Void)?
     
-    // свойство, хранящее стратегию появления яблок
-    //private let createApplesStrategy: CreateApplesStrategy
-    
-    // свойство увелисения скорости змеи
-    //fileprivate let snakeSpeedStrategy: SnakeSpeedStrategy
-    
-    //
+    // свойство вариант сложности
     fileprivate let difficultyFacade: DifficultySettingsFacade
     
     init(size: CGSize, difficulty: Difficulty) {
@@ -37,6 +31,8 @@ class GameScene: SKScene {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - SKScene
     
     // вызывается при первом запуске сцены
     override func didMove(to view: SKView) {
@@ -149,7 +145,6 @@ class GameScene: SKScene {
     // добавление змейки
     fileprivate func addSnake() {
         guard let view = self.view, let scene = view.scene else { return }
-        
         //создаем змею по центру экрана и добавляем ее на сцену
         let snake = Snake(atPoint: CGPoint(x: scene.frame.midX, y: scene.frame.midY))
         self.snake = snake
@@ -204,14 +199,16 @@ extension GameScene: SKPhysicsContactDelegate {
     }
     
     private func headDidCollideApple(apple: SKNode?) {
+        guard let snake = snake else { return }
         //добавляем к змее еще одну секцию
-        snake?.addBodyPart()
+        snake.addBodyPart()
         //удаляем яблоко
         apple?.removeFromParent()
         self.apple = nil
         // создаем новое яблоко
         createApple()
         
+        self.difficultyFacade.snake = snake
         self.difficultyFacade.increaseSnakeSpeed()
     }
     

@@ -33,13 +33,13 @@ final class DifficultySettingsFacade {
     private lazy var snakeSpeedStrategy: SnakeSpeedStrategy = {
         switch self.difficulty {
         case .easy, .medium:
-            return NotIncreaseSnakeSpeedStrategy​()
+            return NotIncreaseSnakeSpeedStrategy()
         case .hard:
-            let strategy = ArithmeticProgressionSnakeSpeedStrategy​()
+            let strategy = ArithmeticProgressionSnakeSpeedStrategy()
             strategy.maxSpeed = 350.0
             return strategy
         case .insane:
-            return ​GeometricProgressionSnakeSpeedStrategy()
+            return GeometricProgressionSnakeSpeedStrategy()
         }
     }()
     
@@ -58,5 +58,4 @@ final class DifficultySettingsFacade {
     func increaseSnakeSpeed() {
         self.snakeSpeedStrategy.increaseSpeedByEatingApple()
     }
-    
 }
